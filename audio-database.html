@@ -21,20 +21,20 @@
       <div>
         <h1 class="text-center"><a href="index.html">String Band Archives<br><small>Classic Philadelphia String Band History</small></a></h1>
         <p class="text-center">
-          <a class="btn btn-primary btn-lg hidden-xs" href="#">Audio</a>
+          <a class="btn btn-primary btn-lg hidden-xs" href="audio.html">Audio</a>
           <a class="btn btn-primary btn-lg hidden-xs" href="photos.html">Photos</a>
           <a class="btn btn-primary btn-lg hidden-xs" href="video.html">Video</a>
           <a class="btn btn-primary btn-lg hidden-xs" href="http://stringbanddatabase.com">Database</a>
           <a class="btn btn-primary btn-lg hidden-xs" href="contact.html">Contact Us</a>
   			</p>
-          <a class="btn btn-primary btn-lg btn-block visible-xs-block" href="#">Audio</a>
+          <a class="btn btn-primary btn-lg btn-block visible-xs-block" href="audio.html">Audio</a>
           <a class="btn btn-primary btn-lg btn-block visible-xs-block" href="photos.html">Photos</a>
           <a class="btn btn-primary btn-lg btn-block visible-xs-block" href="video.html">Video</a>
           <a class="btn btn-primary btn-lg btn-block visible-xs-block" href="http://stringbanddatabase.com">Database</a>
           <a class="btn btn-primary btn-lg btn-block visible-xs-block" href="contact.html">Contact Us</a>
       </div>
 
-      <h1>Audio<br><small class="text-center">Select a band or search to begin.</small></h1>
+      <h1>Audio</h1>
 
       <form id="searchForm" action="./audio-database.html" method="get">
             <div class="form-group">
@@ -47,14 +47,43 @@
             </div>
       </form>
 
+<div id="searchTerm"></div>
+<div class="table-responsive">
+  <table id="bands" class="table tablesorter">
+    <thead>
+      <tr>
+        <th>Band <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th>Song Name <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th>Album Title <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th>Year Recorded <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+        <th>Arranger <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+      </tr>
+    </thead>
+    <script id="bands-template" type="text/x-handlebars-template">
+      {{#if num}}
+      <tr>
+        <td><a href="?q={{normalize cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
+        <td>
+          <a href="{{cellsArray.[5]}}">{{cellsArray.[1]}}</a>
+        </td>
+        <td>
+          {{#if cellsArray.[2]}}
+          <a href="?q={{normalize cellsArray.[2]}}">{{cellsArray.[2]}}</a> {{else}} {{cellsArray.[2]}} {{/if}}
+        </td>
+        <td>
+          {{#if cellsArray.[3]}}
+          <a href="?q={{cellsArray.[3]}}">{{cellsArray.[3]}}</a> {{else}} {{cellsArray.[3]}} {{/if}}
+        </td>
+        <td>
+          {{#if cellsArray.[4]}}
+          <a href="?q={{normalize cellsArray.[4]}}">{{cellsArray.[4]}}</a> {{else}} {{cellsArray.[4]}} {{/if}}
+        </td>
+      </tr>
+      {{/if}}
+    </script>
+  </table>
+</div>
 
-      <ul id="bands">
-        <script id="bands-template" type="text/x-handlebars-template">
-          <li>
-            <a href="./audio-database.html?q={{normalize cells.Band}}">{{cells.Band}}</a>
-          </li>
-        </script>
-      </ul>
 
       <footer class="footer">
         <hr>
@@ -70,7 +99,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.2/handlebars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
-    <script src="js/list.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.21.4/js/jquery.tablesorter.min.js"></script>
+    <script src="js/audio.js"></script>
   </body>
 
 </html>
