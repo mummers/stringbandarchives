@@ -59,7 +59,6 @@
         <th>Arranger <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
       </tr>
     </thead>
-    <tbody>
     <script id="bands-template" type="text/x-handlebars-template">
       {{#if num}}
       <tr>
@@ -71,20 +70,28 @@
         </td>
         <td>
           {{#if cellsArray.[2]}}
-          <a href="?q={{normalize cellsArray.[2]}}">{{cellsArray.[2]}}</a> {{else}} {{cellsArray.[2]}} {{/if}}
+          <a href="?q={{normalize cellsArray.[2]}}">{{cellsArray.[2]}}</a>
+          {{else}}
+            {{cellsArray.[2]}}
+          {{/if}}
         </td>
         <td>
           {{#if cellsArray.[3]}}
-          <a href="?q={{cellsArray.[3]}}">{{cellsArray.[3]}}</a> {{else}} {{cellsArray.[3]}} {{/if}}
+          <a href="?q={{cellsArray.[3]}}">{{cellsArray.[3]}}</a>
+          {{else}}
+            {{cellsArray.[3]}}
+          {{/if}}
         </td>
         <td>
           {{#if cellsArray.[4]}}
-          <a href="?q={{normalize cellsArray.[4]}}">{{cellsArray.[4]}}</a> {{else}} {{cellsArray.[4]}} {{/if}}
+          <a href="?q={{normalize cellsArray.[4]}}">{{cellsArray.[4]}}</a>
+          {{else}}
+            {{cellsArray.[4]}}
+          {{/if}}
         </td>
       </tr>
       {{/if}}
     </script>
-  </tbody>
   </table>
 </div>
 
@@ -106,5 +113,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.21.5/js/jquery.tablesorter.min.js"></script>
     <script src="js/audio.js"></script>
   </body>
-
 </html>
