@@ -55,6 +55,8 @@ Handlebars.registerHelper("normalize", function(input) {
   return input.toLowerCase().replace(/ +/g, "+").replace(/\.+|,.+|'.+/g, "");
 });
 
-$(document).ready(function() {
-  $("#bands").tablesorter();
-}); 
+$(document).ready(function() 
+    {
+        $("#bands").tablesorter();
+    }
+);

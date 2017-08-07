@@ -16,3 +16,7 @@ h1 a, h1 a:hover {
 h2, h3, h5 {
   font-family: "Balthazar", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+th {
+    cursor: pointer;
+    color: #337ab7;
+}

@@ -59,10 +59,13 @@
         <th>Arranger <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
       </tr>
     </thead>
+    <tbody>
     <script id="bands-template" type="text/x-handlebars-template">
       {{#if num}}
       <tr>
-        <td><a href="?q={{normalize cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
+        <td>
+          <a href="?q={{normalize cellsArray.[0]}}">{{cellsArray.[0]}}</a>
+        </td>
         <td>
           <a href="{{cellsArray.[5]}}">{{cellsArray.[1]}}</a>
         </td>
@@ -81,6 +84,7 @@
       </tr>
       {{/if}}
     </script>
+  </tbody>
   </table>
 </div>
 
@@ -99,7 +103,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.2/handlebars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.21.4/js/jquery.tablesorter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.21.5/js/jquery.tablesorter.min.js"></script>
     <script src="js/audio.js"></script>
   </body>
 
