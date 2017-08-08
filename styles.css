@@ -6,15 +6,15 @@ h1 {
   font-size: 250%;
   text-align: center;
   padding: .4em;
-  font-family: "Balthazar", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, serif;
 }
 h1 a, h1 a:hover {
   text-decoration: none;
   color: #337ab7;
-  font-family: "Balthazar", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, serif;
 }
 h2, h3, h5 {
-  font-family: "Balthazar", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, serif;
 }
 th {
     cursor: pointer;
