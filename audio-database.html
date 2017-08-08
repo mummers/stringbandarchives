@@ -46,55 +46,51 @@
                 </div>
             </div>
       </form>
-
-<div id="searchTerm"></div>
-<div class="table-responsive">
-  <table id="bands" class="table tablesorter">
-    <thead>
-      <tr>
-        <th>Band <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-        <th>Song Name <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-        <th>Album Title <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-        <th>Year Recorded <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-        <th>Arranger <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
-      </tr>
-    </thead>
-    <script id="bands-template" type="text/x-handlebars-template">
-      {{#if num}}
-      <tr>
-        <td>
-          <a href="?q={{normalize cellsArray.[0]}}">{{cellsArray.[0]}}</a>
-        </td>
-        <td>
-          <a href="{{cellsArray.[5]}}">{{cellsArray.[1]}}</a>
-        </td>
-        <td>
-          {{#if cellsArray.[2]}}
-          <a href="?q={{normalize cellsArray.[2]}}">{{cellsArray.[2]}}</a>
-          {{else}}
-            {{cellsArray.[2]}}
-          {{/if}}
-        </td>
-        <td>
-          {{#if cellsArray.[3]}}
-          <a href="?q={{cellsArray.[3]}}">{{cellsArray.[3]}}</a>
-          {{else}}
-            {{cellsArray.[3]}}
-          {{/if}}
-        </td>
-        <td>
-          {{#if cellsArray.[4]}}
-          <a href="?q={{normalize cellsArray.[4]}}">{{cellsArray.[4]}}</a>
-          {{else}}
-            {{cellsArray.[4]}}
-          {{/if}}
-        </td>
-      </tr>
-      {{/if}}
-    </script>
-  </table>
-</div>
-
+      <div id="searchTerm"></div>
+      <div class="table-responsive">
+        <table id="bands" class="table tablesorter">
+          <thead>
+            <tr>
+              <th>Band <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+              <th>Song Name <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+              <th>Album Title <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+              <th>Year Recorded <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+              <th>Arranger <i class="fa fa-sort fa-fw" aria-hidden="true"></i></th>
+            </tr>
+          </thead>
+          <tbody>
+            <script id="bands-template" type="text/x-handlebars-template">
+              {{#if num}}
+                <tr>
+                  <td><a href="?q={{normalize cellsArray.[0]}}">{{cellsArray.[0]}}</a></td>
+                  <td><a href="{{cellsArray.[5]}}">{{cellsArray.[1]}}</a></td>
+                  <td>
+                    {{#if cellsArray.[2]}}
+                      <a href="?q={{normalize cellsArray.[2]}}">{{cellsArray.[2]}}</a>
+                    {{else}}
+                      {{cellsArray.[2]}}
+                    {{/if}}
+                  </td>
+                  <td>
+                    {{#if cellsArray.[3]}}
+                      <a href="?q={{cellsArray.[3]}}">{{cellsArray.[3]}}</a>
+                    {{else}}
+                      {{cellsArray.[3]}}
+                    {{/if}}
+                  </td>
+                  <td>
+                    {{#if cellsArray.[4]}}
+                      <a href="?q={{normalize cellsArray.[4]}}">{{cellsArray.[4]}}</a>
+                    {{else}}
+                      {{cellsArray.[4]}}
+                    {{/if}}
+                  </td>
+                </tr>
+              {{/if}}
+            </script>
+          </tbody>
+        </table>
+      </div>
 
       <footer class="footer">
         <hr>
@@ -105,12 +101,11 @@
       </footer>
 
     </div><!-- /.container -->
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.21.5/js/jquery.tablesorter.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.2/handlebars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.21.5/js/jquery.tablesorter.min.js"></script>
     <script src="js/audio.js"></script>
   </body>
 </html>
