@@ -7,7 +7,7 @@ var bandsTemplate = Handlebars.compile($('#bands-template').html());
 // Get a list of all bands.
 $('#bands').sheetrock({
   url: mySpreadsheet,
-  query: "select D,count(C) group by D order by D",
+  query: "select D,max(E),count(C) group by D order by D",
   rowTemplate: bandsTemplate
 });
 
