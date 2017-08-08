@@ -20,3 +20,7 @@ th {
     cursor: pointer;
     color: #337ab7;
 }
+.center-pills {
+    display: flex;
+    justify-content: center;
+}

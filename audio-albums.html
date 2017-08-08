@@ -48,8 +48,8 @@
       </form>
 
       <ul class="nav nav-pills center-pills">
-        <li role="presentation" class="active"><a href="#">Sort By Bands</a></li>
-        <li role="presentation"><a href="audio-albums.html">Sort By Albums</a></li>
+        <li role="presentation"><a href="audio.html">Sort By Bands</a></li>
+        <li role="presentation" class="active"><a href="#">Sort By Albums</a></li>
       </ul>
 
       <br>
@@ -57,8 +57,9 @@
       <ul id="bands">
         <script id="bands-template" type="text/x-handlebars-template">
           <li>
-            <a href="./audio-database.html?q={{normalize cells.Band}}">{{cells.Band}}</a>
+            <a href="./audio-database.html?q={{normalize cellsArray.[0]}}">{{cellsArray.[0]}}</a>
           </li>
+
         </script>
       </ul>
 
@@ -76,7 +77,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.2/handlebars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
-    <script src="js/list-bands.js"></script>
+    <script src="js/list-albums.js"></script>
   </body>
 
 </html>
