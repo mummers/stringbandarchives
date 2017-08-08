@@ -21,7 +21,7 @@ if (params == 0) {
 	loadResults(createQuery(searchTerm));
 } else if (params['q']) { // Search user input
 	searchTerm = params['q'].split('+').join([separator = ' ']).trim();
-	$('#searchTerm').append("<h2>Search results for &ldquo;" + searchTerm + "&rdquo;</h2>");
+	$('#searchTerm').append("<h3>Search results for &ldquo;" + searchTerm + "&rdquo;</h3>");
 	loadResults(createQuery(searchTerm));
 }
 // define search string function
