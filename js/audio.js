@@ -2,27 +2,36 @@
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1JaOe5PF9YC_A6c5ntP2YKPdGvTNqruq4ohsmSvlnK1U/pubhtml?gid=0';
 var bandsTemplate = Handlebars.compile($('#bands-template').html());
 // Get query string parameters
-var params = [],
-	hash;
-var q = document.URL.split('?')[1];
-if (q != undefined) {
-	q = q.split('&');
-	for (var i = 0; i < q.length; i++) {
-		hash = q[i].split('=');
-		params.push(hash[1]);
-		params[hash[0]] = hash[1];
-	}
+var q = document.URL;
+var params = {};
+
+q.replace(/[?&]([^=]+)[=]([^&#]+)/g, function(match, key, value){
+  params[key] = value;
+  return '';
+});
+
+function isEmpty(obj) {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
 }
 // Start with no params
 var searchTerm = "";
 // Check for parameters
-if (params == 0) {
+if (isEmpty(params)) {
 	$('#searchTerm').html("<h2>" + searchTerm + " Results</h2>");
 	loadResults(createQuery(searchTerm));
 } else if (params['q']) { // Search user input
 	searchTerm = params['q'].split('+').join([separator = ' ']).trim();
 	$('#searchTerm').append("<h3>Search results for &ldquo;" + searchTerm + "&rdquo;</h3>");
 	loadResults(createQuery(searchTerm));
+} else if (params['album']) { // specific album search
+	album = params['album'].split('+').join([separator = ' ']).trim();
+	sqlString = "select B,C,D,E,F,G where (lower(D) like lower('%" + album + "%')) order by C asc";
+	$('#searchTerm').append("<h3>Search results for the album &ldquo;" + album + "&rdquo;</h3>");
+	loadResults(sqlString);
 }
 // define search string function
 function createQuery(term) {

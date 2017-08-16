@@ -24,3 +24,7 @@ th {
     display: flex;
     justify-content: center;
 }
+.turtle {
+    margin-left: auto;
+    margin-right: auto;
+}
