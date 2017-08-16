@@ -57,7 +57,7 @@
       <ul id="bands">
         <script id="bands-template" type="text/x-handlebars-template">
           <li>
-            <a href="./audio-database.html?q={{normalize cellsArray.[0]}}">{{cellsArray.[0]}}</a>
+            <a href="./audio-database.html?album={{normalize cellsArray.[0]}}">{{cellsArray.[0]}}</a>
             {{#if cellsArray.[1]}}
               <a href="./audio-database.html?q={{normalize cellsArray.[1]}}">({{cellsArray.[1]}})</a>
             {{else}}
