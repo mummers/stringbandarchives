@@ -55,7 +55,7 @@ function loadResults(sql) {
 Handlebars.registerHelper("normalize", function(input) {
 	return input.toLowerCase().replace(/ +/g, "+").replace(/\.+|,.+|'.+/g, "");
 });
-$(document).ready((function (e) {
+$(document).ready(function (e) {
     if (jQuery.fn.tablesorter) {
         alert("pluginloaded");
     }
