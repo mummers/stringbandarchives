@@ -4,18 +4,16 @@ var bandsTemplate = Handlebars.compile($('#bands-template').html());
 // Get query string parameters
 var q = document.URL;
 var params = {};
-
-q.replace(/[?&]([^=]+)[=]([^&#]+)/g, function(match, key, value){
-  params[key] = value;
-  return '';
+q.replace(/[?&]([^=]+)[=]([^&#]+)/g, function(match, key, value) {
+	params[key] = value;
+	return '';
 });
 
 function isEmpty(obj) {
-    for(var key in obj) {
-        if(obj.hasOwnProperty(key))
-            return false;
-    }
-    return true;
+	for (var key in obj) {
+		if (obj.hasOwnProperty(key)) return false;
+	}
+	return true;
 }
 // Start with no params
 var searchTerm = "";
