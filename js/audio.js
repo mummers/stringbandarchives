@@ -60,6 +60,6 @@ $(document).ready(function (e) {
         alert("pluginloaded");
     }
     // jQuery.tablesorter();
-    $('table').tablesorter();
+    $('#bands').tablesorter();
 });
 
