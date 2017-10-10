@@ -37,28 +37,23 @@ function createQuery(term) {
 }
 // define function to load results
 function loadResults(sql) {
-	$('#bands').sheetrock({
-		url: mySpreadsheet,
-		query: sql,
-		rowTemplate: bandsTemplate,
-		callback: function(error, options, response) {
-			if (!error) {
-				if ($('#bands tr').length == 1) {
-					$('#bands').append("<h3>No results.</h3>")
-				}
-			} else {
-				$('#bands').append('<h3>Error.</h3>');
-			}
-		}
-	});
+$('#bands').sheetrock({
+  url: mySpreadsheet,
+  query: sql,
+  rowTemplate: bandsTemplate,
+  callback: function(error, options, response) {
+    if (!error) {
+      if ($('#bands tr').length == 1) {
+        $('#bands').append("<h3>No results.</h3>")
+      }
+    } else {
+      $('#bands').append('<h3>Error.</h3>');
+    }
+    $("#bands").tablesorter();
+  }
+});
 }
+
 Handlebars.registerHelper("normalize", function(input) {
 	return input.toLowerCase().replace(/ +/g, "+").replace(/\.+|,.+|'.+/g, "");
 });
-
-$(document).ready(function()
-    {
-        $("#bands").tablesorter(); 
-    }
-);
-
