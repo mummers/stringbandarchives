@@ -1,6 +1,6 @@
 body {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  padding-bottom: 170px;
+  font-size: 14px;
 }
 h1 {
   font-size: 250%;
@@ -20,11 +20,19 @@ th {
     cursor: pointer;
     color: #337ab7;
 }
-.center-pills {
-    display: flex;
-    justify-content: center;
+.card {
+  margin: 10px;
 }
 .turtle {
     margin-left: auto;
     margin-right: auto;
+}
+.note {
+  display: none;
+}
+.database {
+  padding-bottom: 10px;
+}
+.searchForm {
+  padding-top: 10px;
 }

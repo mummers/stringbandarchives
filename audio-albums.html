@@ -1,87 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Audio - String Band Archives</title>
+<head>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Droid+Serif" rel="stylesheet">
-    <link href='styles.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-  </head>
-  <body>
+  <title>String Band Archives</title>
 
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Droid+Serif">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='styles.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-      <div>
-        <h1 class="text-center"><a href="index.html">String Band Archives<br><small>Classic Philadelphia String Band History</small></a></h1>
-        <p class="text-center">
-          <a class="btn btn-primary btn-lg hidden-xs" href="#">Audio</a>
-          <a class="btn btn-primary btn-lg hidden-xs" href="photos.html">Photos</a>
-          <a class="btn btn-primary btn-lg hidden-xs" href="video.html">Video</a>
-          <a class="btn btn-primary btn-lg hidden-xs" href="http://stringbanddatabase.com">Database</a>
-          <a class="btn btn-primary btn-lg hidden-xs" href="contact.html">Contact Us</a>
-  			</p>
-          <a class="btn btn-primary btn-lg btn-block visible-xs-block" href="#">Audio</a>
-          <a class="btn btn-primary btn-lg btn-block visible-xs-block" href="photos.html">Photos</a>
-          <a class="btn btn-primary btn-lg btn-block visible-xs-block" href="video.html">Video</a>
-          <a class="btn btn-primary btn-lg btn-block visible-xs-block" href="http://stringbanddatabase.com">Database</a>
-          <a class="btn btn-primary btn-lg btn-block visible-xs-block" href="contact.html">Contact Us</a>
-      </div>
-
-      <h1>Audio<br><small class="text-center">Select a band or search to begin.</small></h1>
-
-      <form id="searchForm" action="./audio-database.html" method="get">
-            <div class="form-group">
-                <div class="input-group">
-                  <input name="q" type="text" class="form-control input-lg" placeholder="Search song, string band, arranger...">
-                  <span class="input-group-btn">
-                    <button class="btn btn-default btn-lg" type="submit"><i class="fa fa-search"></i></button>
-                  </span>
-                </div>
-            </div>
-      </form>
-
-      <ul class="nav nav-pills center-pills">
-        <li role="presentation"><a href="audio.html">Sort By Bands</a></li>
-        <li role="presentation" class="active"><a href="#">Sort By Albums</a></li>
-      </ul>
-
-      <br>
-
-      <ul id="bands">
-        <script id="bands-template" type="text/x-handlebars-template">
-          <li>
-            <a href="./audio-database.html?album={{normalize cellsArray.[0]}}">{{cellsArray.[0]}}</a>
-            {{#if cellsArray.[1]}}
-              <a href="./audio-database.html?q={{normalize cellsArray.[1]}}">({{cellsArray.[1]}})</a>
-            {{else}}
-            {{/if}}
+      <a class="navbar-brand" href="#">String Band Archives 2.0</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
           </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Audio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="photos.html">Photos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="video.html">Video</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://stringbanddatabase.com">Database</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-        </script>
-      </ul>
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h3 class="text-center" style="padding-top: 10px;">Select a band or search to begin.</h3>
 
-      <footer class="footer">
-        <hr>
-        <p>Thanks to: Russ Coleman, Joe Marchesa, Brian Reed, John Wernega, Joe Fink,  Michael Osowiecki, Amanda Ettinger,
-        Terry McDonald, John Gilbert, Scott Ratzke, Mike Weick, Eric Leso,
-        Marty Rotindo Jr., Shawn Decky, Paul Gawlinski, and Dan Mizner to whom without their generous contributions this site would not be possible!</p>
-        <p>Operated by <a href="http://tjferry.me">TJ Ferry</a>. Previously operated by Russ Coleman and Joe Marchesa.</p>
-      </footer>
+        <form id="searchForm" class="searchForm" action="./audio-database.html" method="get">
+              <div class="form-group">
+                  <div class="input-group">
+                    <input name="q" type="text" class="form-control form-control-lg" placeholder="Search song, string band, arranger...">
+                    <div class="input-group-append">
+                      <button class="btn btn-secondary btn-lg" type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                  </div>
+              </div>
+        </form>
 
-    </div><!-- /.container -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.2/handlebars.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
-    <script src="js/list-albums.js"></script>
-  </body>
+        <nav class="nav nav-pills justify-content-center">
+          <a class="nav-link" href="audio.html">Sort By Bands</a>
+          <a class="nav-link active" href="#">Sort By Albums</a>
+        </nav>
+
+        <br>
+
+        <ul id="bands">
+          <script id="bands-template" type="text/x-handlebars-template">
+            <li>
+              <a href="./audio-database.html?album={{normalize cellsArray.[0]}}">{{cellsArray.[0]}}</a>
+              {{#if cellsArray.[1]}}
+                <a href="./audio-database.html?q={{normalize cellsArray.[1]}}">({{cellsArray.[1]}})</a>
+              {{else}}
+              {{/if}}
+            </li>
+
+          </script>
+        </ul>
+
+      </div>
+    </div>
+
+    <footer class="footer">
+      <hr>
+      <p>Thanks to: Russ Coleman, Joe Marchesa, Brian Reed, John Wernega, Joe Fink,  Michael Osowiecki, Amanda Ettinger,
+      Terry McDonald, John Gilbert, Scott Ratzke, Mike Weick, Eric Leso,
+      Marty Rotindo Jr., Shawn Decky, Paul Gawlinski, and Dan Mizner to whom without their generous contributions this site would not be possible!</p>
+      <p>Operated by <a href="http://tjferry.me">TJ Ferry</a>. Previously operated by Russ Coleman and Joe Marchesa.</p>
+    </footer>
+
+  </div><!-- /.container -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chance/1.0.4/chance.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.21.4/js/jquery.tablesorter.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
+
+  <script src="js/list-albums.js"></script>
+
+</body>
 
 </html>
