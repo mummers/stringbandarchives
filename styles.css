@@ -37,6 +37,9 @@ th {
 .searchForm {
   padding-top: 10px;
 }
-.form-control{
+.form-control {
   border-radius: 50px;
+}
+.lead {
+  color: #000;
 }

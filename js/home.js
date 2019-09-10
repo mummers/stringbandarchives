@@ -35,9 +35,7 @@ Handlebars.registerHelper("normalize", function(input) {
 
 $(document).ready(function() {
 	$("td.note:contains('dq')").siblings(".prize").addClass("dq");
-  console.log("hello");
 	if ($(".dq").length != 0) {
-    console.log("hello2");
 		$(".dqNote").show();
 	}
 });
