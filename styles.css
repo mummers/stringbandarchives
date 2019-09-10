@@ -37,3 +37,6 @@ th {
 .searchForm {
   padding-top: 10px;
 }
+.form-control{
+  border-radius: 50px;
+}
